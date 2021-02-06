@@ -1,0 +1,142 @@
+  <body {
+        background-color:red }
+    <html>
+    <head>
+       <title>anuki</title>
+    </head>
+    <meta charset="UTF-8"
+    <meta name="viewpoint" content="width=device,initial-scale=1.0">
+ <style> 
+ body {
+   background-color: rosybrown ;}
+
+
+
+   .Buy_Nemo, #btn{
+  color: #30668A;
+  
+  border: 2px solid #30668A;
+  min-width: 110px;
+  background: #ffc6c2;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 7px;
+  display: inline-block;
+}
+
+.Buy_Nemo:hover{
+    -webkit-animation-name: hvr-buzz;
+    animation-name: hvr-buzz;
+    -webkit-animation-duration: 0.15s;
+    animation-duration: 0.15s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hvr-buzz {
+  50% {
+    transform: translate(-46px,-20px) rotate(1deg);
+  }
+  100% {
+    transform: translate(-50px, -20px) rotate(-1deg);
+  }
+}
+
+.circule_test {
+       display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0%);
+    top: 50%;
+}
+.Buy_Nemo {
+    width: 96px;
+    display:flex;
+    align-item:center;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    transform: translate(-48px,-20px);
+    transition: 0.2s;
+    animation-timing-function: linear;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    </style>
+       <body> 
+        <br>
+        <br>
+        <br>
+    
+  
+        <center> <h1><i><font color="blue">Tornike,do you love me?</font> </i> </h1><center>
+        <div style="position: relative; width: 100px;">
+         <div  class="circule_test">
+            <a class="Buy_Nemo " href="">Yes </a>
+             </div>
+
+           <button  style="position: relative;"  id="btn">no</button>
+         </div>
+   <h1><i><p><font color="red">I am waiting for your answer</font>
+
+    </p></i></h1>
+    <img src="image/ani.JPG" width="200" height="200" /></center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/VePaI3jX4Sk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+   var btn = document.getElementById("btn");
+
+      document.getElementById("btn").addEventListener("mouseenter", function() {
+         btn.style.top = Math.floor((Math.random() * 230) + 1) + "px";
+ btn.style.left = Math.floor((Math.random() * 200) + 1) + "px";
+      });
+
+
+
+      $('.circule_test').mousemove(function(e){
+		    	var relativY= $('.circule_test').offset().top-$(window).scrollTop()
+		    	var relativX= $('.circule_test').offset().left
+		    	var topposition= e.clientY-relativY
+		    	var leftposition=e.clientX-relativX
+		        console.log(e.clientY-relativY)
+		        console.log(e.clientX-relativX)
+                $('.Buy_Nemo').css({
+                	top: topposition+ 'px',
+                	left:leftposition+'px'
+                })
+		    })
+            $('.circule_test').mousemove(function(e){
+            	   e.stopPropagation()
+            })
+		     $('.circule_test').mouseleave(function(){
+		     	 $('.Buy_Nemo').css({
+                	top: '100px',
+                	left:'100px'
+                })
+		     })
+      </script>
+ <script>
+ 
+
+
+ 
+   
+//    document.getElementById("btn").addEventListener("click ", ()=> {
+//    debugger
+   
+// // btn.style.top = Math.floor((Math.random() * 230) + 1) + "px";
+// // btn.style.left = Math.floor((Math.random() * 200) + 1) + "px";
+// })
+ </script>
+    </body>
+</html>  
